@@ -12,8 +12,9 @@ const modal = document.getElementById("exampleModal");
 modal.addEventListener("shown.bs.modal", () => {
   const modalbody = document.getElementById("modalbody");
   const cart = JSON.parse(localStorage.getItem("cart"));
-  modalbody.innerHTML = cart.map(
-    (image) => `<img src="/assets/${image}.png" style="width:60px">`
+  modalbody.innerHTML = cart.reduce(
+    (acc, image) => acc + `<img src="/assets/${image}.png" style="width:60px">`,
+    ""
   );
 });
 
