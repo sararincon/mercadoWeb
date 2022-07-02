@@ -1,7 +1,26 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const cart = JSON.parse(localStorage.getItem("cart"));
+  console.log(cart);
+  selection = [...cart];
+  selection.forEach((item) => {
+    const prod = document.getElementById(item);
+    prod.classList.remove("opacity-25");
+  });
+});
+
+const modal = document.getElementById("exampleModal");
+modal.addEventListener("shown.bs.modal", () => {
+  const modalbody = document.getElementById("modalbody");
+  const cart = JSON.parse(localStorage.getItem("cart"));
+  modalbody.innerHTML = cart.map(
+    (image) => `<img src="/assets/${image}.png" style="width:60px">`
+  );
+});
+
 const product = document.getElementsByClassName("producto-item");
 console.log(product);
 
-const selection = [];
+let selection = [];
 
 [...product].forEach((prod) => {
   prod.addEventListener("click", () => {

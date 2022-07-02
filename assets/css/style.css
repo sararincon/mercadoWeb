@@ -1,0 +1,24 @@
+nav {
+  background-color: #1e8449;
+}
+
+.navbar-brand {
+  color: #ffffff;
+  font-family: "Bebas Neue", cursive;
+  font-size: 30px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #1e8449;
+  height: 50px;
+
+  color: #ffffff;
+}
+
+.card {
+  margin-bottom: 50px;
+}
